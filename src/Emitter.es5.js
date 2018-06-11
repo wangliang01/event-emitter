@@ -15,7 +15,7 @@
    * @return {object} this
    */
   Emitter._addEventListener = function (eventName, listener) {
-    if (typeof listener !== 'function') throw new TypeError('"listener" argument must be a function')
+    if (typeof listener !== 'function') throw new TypeError('"listener" must be [Function]')
 
     var events = this._events
 
@@ -37,7 +37,7 @@
    * @return {object} this
    */
   Emitter._removeEventListener = function (eventName, listener) {
-    if (typeof listener !== 'function') throw new TypeError('"listener" argument must be a function')
+    if (typeof listener !== 'function') throw new TypeError('"listener" must be [Function]')
 
     var listeners = this._events[eventName],
       i = 0,
@@ -112,7 +112,7 @@
    * @return {object} this
    */
   Emitter.prototype.once = function (eventName, listener) {
-    if (typeof listener !== 'function') throw new TypeError('"listener" argument must be a function')
+    if (typeof listener !== 'function') throw new TypeError('"listener" must be [Function]')
 
     var events = this._events
 
